@@ -14,6 +14,8 @@ var svgns = "http://www.w3.org/2000/svg";
 
 var dragmode = "";
 
+var rectangleDimensionLIstener = new RectangleProcessor.RectangleDimensionListener();
+
 var startPos = {
     x: 0,
     y: 0,
