@@ -1,0 +1,77 @@
+﻿body {
+  /* Uncomment this to enable scrolling and zooming
+  touch-action: manipulation;
+  */
+}
+
+svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+}
+
+rect.ApplicationWindow {
+    fill: aqua;
+    stroke-width: 1;
+    stroke: rgb(255, 216, 0);
+    cursor:move;
+}
+
+rect.LeftEdge {
+    fill: red;
+    stroke-width: 1;
+    stroke: rgb(255, 0, 0);
+    cursor: ew-resize;
+}
+
+rect.RightEdge {
+    fill: red;
+    stroke-width: 1;
+    stroke: rgb(255, 0, 0);
+    cursor: ew-resize;
+}
+
+rect.TopEdge {
+    fill: red;
+    stroke-width: 1;
+    stroke: rgb(255, 0, 0);
+    cursor: ns-resize;
+}
+
+rect.BottomEdge {
+    fill: red;
+    stroke-width: 1;
+    stroke: rgb(255, 0, 0);
+    cursor: ns-resize;
+}
+
+rect.NECorner {
+    fill: pink;
+    stroke-width: 1;
+    stroke: rgb(248, 0, 255);
+    cursor: nwse-resize;
+}
+
+rect.SECorner {
+    fill: pink;
+    stroke-width: 1;
+    stroke: rgb(248, 0, 255);
+    cursor: nesw-resize;
+}
+
+rect.NWCorner {
+    fill: pink;
+    stroke-width: 1;
+    stroke: rgb(248, 0, 255);
+    cursor: nesw-resize;
+}
+
+rect.SWCorner {
+    fill: pink;
+    stroke-width: 1;
+    stroke: rgb(248, 0, 255);
+    cursor: nwse-resize;
+}
+
+
