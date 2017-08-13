@@ -9,9 +9,11 @@
   <ItemGroup>
     <ClCompile Include="pch.cpp" />
     <ClCompile Include="RectangleDimensionListener.cpp" />
+    <ClCompile Include="SineTone.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />
     <ClInclude Include="RectangleDimensionListener.h" />
+    <ClInclude Include="SineTone.h" />
   </ItemGroup>
 </Project>

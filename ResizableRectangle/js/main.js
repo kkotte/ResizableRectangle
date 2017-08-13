@@ -14,7 +14,7 @@ var svgns = "http://www.w3.org/2000/svg";
 
 var dragmode = "";
 
-var rectangleDimensionLIstener = new RectangleProcessor.RectangleDimensionListener();
+var rectangleDimensionListener = new RectangleProcessor.RectangleDimensionListener();
 
 var startPos = {
     x: 0,
@@ -167,6 +167,8 @@ window.onload = function ()
         trackMouse(event);
     }, false);
     document.getElementById('svgCanvas').appendChild(swCorner);
+
+    document.getElementById("status").innerHTML = "(" + applicationWindow.x + ", " + applicationWindow.y + ") (" + applicationWindow.W + " * " + applicationWindow.H + ")";
 }
 
 function trackMouse(event) {
@@ -245,6 +247,8 @@ function paintApplicationWindow()
     swCorner.setAttributeNS(null, 'y', applicationWindow.y + applicationWindow.H);
     swCorner.setAttributeNS(null, 'height', applicationWindow.edgeThickness);
     swCorner.setAttributeNS(null, 'width', applicationWindow.edgeThickness);
+
+    document.getElementById("status").innerHTML = "(" + applicationWindow.x + ", " + applicationWindow.y + ") (" + applicationWindow.W + " * " + applicationWindow.H + ")";
 }
 
 function onMouseMoved(event) {
@@ -303,4 +307,7 @@ function onMouseMoved(event) {
     }
 
     paintApplicationWindow();
+
+    rectangleDimensionListener.updateArea(applicationWindow.W * applicationWindow.H);
+    rectangleDimensionListener.updatePosition(applicationWindow.x, applicationWindow.x + applicationWindow.W);
 }
