@@ -202,5 +202,5 @@ void SineTone::SetRightVolume(float volume)
 void SineTone::UpdateVolume()
 {
 	_audioStreamVolume->SetChannelVolume(0, _masterVolume *_leftVolume);
-	_audioStreamVolume->SetChannelVolume(0, _masterVolume *_rightVolume);
+	_audioStreamVolume->SetChannelVolume(1, _masterVolume *_rightVolume);
 }

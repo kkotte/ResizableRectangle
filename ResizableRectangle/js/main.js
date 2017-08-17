@@ -169,6 +169,9 @@ window.onload = function ()
     document.getElementById('svgCanvas').appendChild(swCorner);
 
     document.getElementById("status").innerHTML = "(" + applicationWindow.x + ", " + applicationWindow.y + ") (" + applicationWindow.W + " * " + applicationWindow.H + ")";
+
+    rectangleDimensionListener.updateArea(applicationWindow.W * applicationWindow.H);
+    rectangleDimensionListener.updatePosition(applicationWindow.x, applicationWindow.x + applicationWindow.W);
 }
 
 function trackMouse(event) {
