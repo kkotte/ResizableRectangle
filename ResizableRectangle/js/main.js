@@ -168,10 +168,12 @@ window.onload = function ()
     }, false);
     document.getElementById('svgCanvas').appendChild(swCorner);
 
-    document.getElementById("status").innerHTML = "(" + applicationWindow.x + ", " + applicationWindow.y + ") (" + applicationWindow.W + " * " + applicationWindow.H + ")";
+    document.getElementById("status").innerHTML = "(" + applicationWindow.x + ", " + applicationWindow.y + ") (" + applicationWindow.W + " * " + applicationWindow.H + ") MAX[" + window.innerWidth + ", " + window.innerHeight + "]";
 
-    rectangleDimensionListener.updateArea(applicationWindow.W * applicationWindow.H);
-    rectangleDimensionListener.updatePosition(applicationWindow.x, applicationWindow.x + applicationWindow.W);
+    window.addEventListener("resize", function () { rectangleDimensionListener.updateMaxArea(window.innerWidth, window.innerHeight); });
+
+    rectangleDimensionListener.updateMaxArea(window.innerWidth, window.innerHeight);
+    rectangleDimensionListener.updateRectanglePosition(applicationWindow.x, applicationWindow.y, applicationWindow.W, applicationWindow.H);
 }
 
 function trackMouse(event) {
@@ -251,7 +253,7 @@ function paintApplicationWindow()
     swCorner.setAttributeNS(null, 'height', applicationWindow.edgeThickness);
     swCorner.setAttributeNS(null, 'width', applicationWindow.edgeThickness);
 
-    document.getElementById("status").innerHTML = "(" + applicationWindow.x + ", " + applicationWindow.y + ") (" + applicationWindow.W + " * " + applicationWindow.H + ")";
+    document.getElementById("status").innerHTML = "(" + applicationWindow.x + ", " + applicationWindow.y + ") (" + applicationWindow.W + " * " + applicationWindow.H + ") MAX[" + window.innerWidth + ", " + window.innerHeight + "]";
 }
 
 function onMouseMoved(event) {
@@ -311,6 +313,5 @@ function onMouseMoved(event) {
 
     paintApplicationWindow();
 
-    rectangleDimensionListener.updateArea(applicationWindow.W * applicationWindow.H);
-    rectangleDimensionListener.updatePosition(applicationWindow.x, applicationWindow.x + applicationWindow.W);
+    rectangleDimensionListener.updateRectanglePosition(applicationWindow.x, applicationWindow.y, applicationWindow.W, applicationWindow.H);
 }
