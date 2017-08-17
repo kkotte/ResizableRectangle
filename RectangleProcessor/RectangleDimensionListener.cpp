@@ -28,8 +28,9 @@ void RectangleDimensionListener::UpdateVolume()
 	volume = min(volume, 1.0F);
 
 	int centerOfGravity = _rect.x + _rect.width / 2.F;
-	float distToCenter = (centerOfGravity - _maxDimension.maxWidth/2.F) / _maxDimension.maxWidth/2.F; // Value between -1 and +1
+	float distToCenter = ((float)centerOfGravity - _maxDimension.maxWidth/2.F) / (_maxDimension.maxWidth/2.F); // Value between -1 and +1
 
+	distToCenter = max(min(distToCenter, 1.F), -1.F);
 	float rightVolume = (distToCenter - (-1.F)) / 2.F;
 	float leftVolume = 1.0 - rightVolume;
 
